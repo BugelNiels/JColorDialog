@@ -63,3 +63,5 @@ target/
 *.zip
 *.tar.gz
 *.rar
+
+src/test/java/UITest.java
