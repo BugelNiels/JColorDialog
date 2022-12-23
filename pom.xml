@@ -1,0 +1,96 @@
+<!-- POM specification -->
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>
+        4.0.0
+    </modelVersion>
+
+    <!-- Names -->
+    <groupId>bugelniels.colordialog</groupId>
+    <artifactId>colordialog</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>color dialog</name>
+
+    <!-- implementation details -->
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <!--
+            Plugin that integrates Apache checkstyle into Maven.
+            For more information, check here: https://maven.apache.org/plugins/maven-checkstyle-plugin
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>10.1</version>
+                    </dependency>
+                </dependencies>
+                <!--
+                Use this configuration setting for plugin-wide configuration,
+                like the location of the checkstyle files relative to this pom
+                file.
+                -->
+                <configuration>
+                    <configLocation>.checkstyle/config.xml</configLocation>
+                    <suppressionsLocation>.checkstyle/suppressions.xml</suppressionsLocation>
+                </configuration>
+                <executions>
+                    <!--
+                    Custom execution that runs checkstyle:check during the
+                    "validate" phase, so before any tests.
+                    -->
+                    <execution>
+                        <id>check-test</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.10.0</version>
+        </dependency>
+    </dependencies>
+</project>
