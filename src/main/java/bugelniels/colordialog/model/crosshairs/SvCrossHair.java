@@ -35,8 +35,8 @@ public class SvCrossHair implements CrossHair {
     public SvCrossHair(GradientColor color, SvGradient parent) {
         this.gradientColor = color;
         this.parent = parent;
-        this.x = (int) color.getSaturation() * parent.getWidth();
-        this.y = (int) color.getBrightness() * parent.getHeight();
+        this.x = (int) (color.getSaturation() * parent.getWidth());
+        this.y = (int) ((1.0 - color.getBrightness()) * parent.getHeight());
     }
 
     private int clamp(int value, int min, int max) {

@@ -31,7 +31,7 @@ public class JColorDialog extends JDialog {
     private static final int HUE_GRADIENT_WIDTH = 20;
     private static final int HUE_GRADIENT_HEIGHT = 255;
     private static final Color DEFAULT_COLOR = Color.GREEN;
-    private static final int HSV_GRADIENT_OFFSET_LEFT = 1;
+    private static final int HSV_GRADIENT_OFFSET_LEFT = 10;
 
     private final GradientColor gradientColor;
 

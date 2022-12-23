@@ -35,7 +35,7 @@ public class HueCrossHair implements CrossHair {
         this.gradientColor = color;
         this.parent = parent;
         this.x = parent.getWidth();
-        this.y = (int) gradientColor.getHue() * parent.getHeight();
+        this.y = (int) (gradientColor.getHue() * parent.getHeight());
     }
 
     private int clamp(int value, int min, int max) {

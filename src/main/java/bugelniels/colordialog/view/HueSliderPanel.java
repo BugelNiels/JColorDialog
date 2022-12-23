@@ -1,8 +1,8 @@
 package bugelniels.colordialog.view;
 
 import bugelniels.colordialog.model.GradientColor;
-import bugelniels.colordialog.model.gradients.HueGradient;
 import bugelniels.colordialog.model.crosshairs.HueCrossHair;
+import bugelniels.colordialog.model.gradients.HueGradient;
 
 import javax.swing.*;
 import java.awt.*;
