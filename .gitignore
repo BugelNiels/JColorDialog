@@ -64,4 +64,4 @@ target/
 *.tar.gz
 *.rar
 
-src/test/UItest
+src/test/java/UItest.java
